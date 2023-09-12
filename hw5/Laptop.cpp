@@ -24,14 +24,12 @@ void Laptop :: inputModel(int LaptopPrice){
     model = new char[strlen(buffer) + 1];
     strcpy(model, buffer);
     price = LaptopPrice;
-    delete[] model;
 }
 
 
 
 
-Laptop::Laptop(const char* ramModel, int ramPrice, const char* videoCardModel, int videoCardPrice, const char* ssdModel, int ssdPrice, const char* cpuModel, int cpuPrice)
-    :ram(), ssd(), videocard(), cpu() {
+Laptop::Laptop(const char* ramModel, int ramPrice, const char* videoCardModel, int videoCardPrice, const char* ssdModel, int ssdPrice, const char* cpuModel, int cpuPrice):ram(), ssd(), videocard(), cpu() {
     ram.setRAM(ramModel, ramPrice);
     ssd.setSSD(ssdModel, ssdPrice);
     videocard.setVideoCard(videoCardModel, videoCardPrice);
@@ -56,5 +54,5 @@ void Laptop::print() {
 
 
 Laptop::  ~Laptop(){
-//    delete[] model;
+    delete[] model;
 }
